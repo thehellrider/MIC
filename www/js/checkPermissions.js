@@ -6,13 +6,14 @@
     //
 	
     function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
+        document.addEventListener("deviceready", onDeviceReady, false);		
     }
 
     // Cordova is loaded and it is now safe to make calls Cordova methods
     //
     function onDeviceReady() {		
-        var permissions = cordova.plugins.permissions;
+		alert("device ready. calling function");
+      /*  var permissions = cordova.plugins.permissions;
 		permissions.hasPermission(permissions.CAMERA, function( status ){
 		  if ( status.hasPermission ) {
 			alert("Apunta con la cámara al marcador cuadrado y verás algo impresionante.");
@@ -23,7 +24,7 @@
 			permissions.requestPermission(permissions.CAMERA, success, error);
 			
 		  }
-		});
+		});*/
     }
 	
 	function error() {
