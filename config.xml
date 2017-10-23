@@ -60,7 +60,9 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <plugin name="cordova-plugin-battery-status" />
-    <plugin name="cordova-plugin-camera" spec="^2.4.1" />
+    <plugin name="cordova-plugin-camera" spec="^2.4.1">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Debes permitir que la aplicacion pueda usar la camara para que funcione." />
+    </plugin>
     <plugin name="cordova-plugin-media-capture" spec="^1.4.3" />
     <plugin name="cordova-plugin-console" spec="^1.1.0" />
     <plugin name="cordova-plugin-contacts" spec="^2.3.1" />
@@ -78,4 +80,5 @@
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-vibration" spec="^2.1.5" />
     <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.8" />
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
 </widget>
