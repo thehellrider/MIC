@@ -11,9 +11,23 @@
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>-->
 <!-- check permissions -->
 <script type="text/javascript" charset="utf-8">
-    function checkPermissions() {		
+	 function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);		
+    }
+	
+    function onDeviceReady() {		
     	var permissions = cordova.plugins.permissions;
-		permissions.requestPermission(permissions.CAMERA, success, error);
+		permissions.hasPermission(permissions.CAMERA, function( status ){
+		  if ( status.hasPermission ) {
+			alert("Apunta con la cámara al marcador cuadrado y verás algo impresionante.");
+		  }
+		  else {
+			alert("Esta app necesita poder acceder a la camara de tu dispoitivo. Revisa los permisos en la configuración.");
+			
+			permissions.requestPermission(permissions.CAMERA, success, error);
+			
+		  }
+		});
 	}
 	function error() {
 	  console.warn('Camera permission is not turned on');
@@ -25,7 +39,7 @@
 </script>
 </head>
 
-<body onload="checkPermissions()" style="margin : 0px; overflow: hidden;">
+<body onload="onLoad()" style="margin : 0px; overflow: hidden;">
   <a-scene embedded arjs="sourceType: webcam;">
     <a-marker preset="kanji"> 
     <!--	<a-marker type="pattern" patternUrl="images/pattern-marker.patt"> -->
