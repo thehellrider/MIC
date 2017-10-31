@@ -5890,7 +5890,8 @@ ARjs.Source.prototype._initSourceWebcam = function(onReady, onError) {
 
 	// init default value
 	onError = onError || function(error){	
-		alert('Webcam Error\nName: '+error.name + '\nMessage: '+error.message)
+		//alert('Webcam Error\nName: '+error.name + '\nMessage: '+error.message)
+		alert('La app no tiene acceso a la camara. Revisa los permisos de la aplicacion')
 	}
 
 	var domElement = document.createElement('video');

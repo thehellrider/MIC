@@ -4,32 +4,39 @@
 <meta charset="utf-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Documento sin título</title>
-<!-- include A-Frame obviously -->
+<!-- include A-Frame obviously 
 <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-<!-- include ar.js for A-Frame -->
+-->
+<script src="js/aframe.min.js"></script>
+<!-- include ar.js for A-Frame 
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/src/loaders/animation-mixer.js"></script> 
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-
+-->
+<script src="js/aframe-extras.loaders.min.js"></script>
+<script src="js/aframe-ar.js"></script>
 </head>
 
-<body onload="check()" style="margin : 0px; overflow: hidden;">
+<body style="margin : 0px; overflow: hidden;">
   <a-scene embedded arjs="sourceType: webcam;">
     <a-marker preset="kanji"> 
     <!--	<a-marker type="pattern" patternUrl="images/pattern-marker.patt"> -->
-    	<!-- <a-entity  scale="0.005 0.005 0.005" gltf-model-next="src: url(images/buster_drone/scene.gltf);" ></a-entity> -->
-        <!-- <a-video src="images/video.mp4" position="0 0 0"></a-video>  -->     
-        <a-entity  scale="0.3 0.3 0.3" gltf-model-next="src: url(images/glTF/Duck.gltf);" ></a-entity>  
-               
-        <!--<a-entity scale="0.03 0.03 0.03"
+    	 <!-- <a-entity  scale="0.005 0.005 0.005" gltf-model-next="src: url(images/buster_drone/scene.gltf);" ></a-entity>   -->
+        <!-- <a-video src="images/video.mp4" position="0 0 0"></a-video> -->
+        <!-- <a-entity  scale="0.3 0.3 0.3" gltf-model-next="src: url(images/glTF/Duck.gltf);" ></a-entity>   
+        <a-entity scale="0.04 0.04 0.04" animation-mixer="clip: *" sound="src: url(images/sonido.mp3); autoplay: true; loop: true" gltf-model-next="src: url(images/walk_rigged_v003/scene.gltf);" ></a-entity>  -->
+        <!-- <a-entity scale="0.04 0.04 0.04" animation-mixer="clip: *" sound="src: url(images/sonido.mp3); autoplay: true; loop: true" gltf-model-next="src: url(images/walk_rigged_v003/scene.gltf);" ></a-entity> -->
+         <a-entity scale="0.3 0.3 0.3" animation-mixer="clip: *" autoplay: true; loop: true" gltf-model-next="src: url(images/small_glytchbug/scene.gltf);" ></a-entity>
+       <!--  <a-entity scale="0.03 0.03 0.03"
             obj-model="obj: url(images/obj/Robot_modelBONES.obj); 
             mtl: url(images/obj/Robot_modelBONES.mtl)">
-		</a-entity>-->
+		</a-entity> -->
     </a-marker>
     
     <a-entity camera></a-entity>
 
   </a-scene>
 
-
+<script type="text/javascript" src="cordova.js"></script>
 </body>
 </html>
