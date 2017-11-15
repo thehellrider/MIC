@@ -15,26 +15,47 @@
 -->
 <script src="js/aframe-extras.loaders.min.js"></script>
 <script src="js/aframe-ar.js"></script>
+<style type="text/css">
+	#arjsDebugUIContainer{display:none !important;}
+</style>
+<script>
+	/*	AFRAME.registerComponent('play-on-scan', { 
+		init: function () { 
+			var el = this.el; 
+			el.sceneEl.addEventListener('markerFound', function () {  
+				el.setAttribute('animation-mixer', {clip: '*', loop: 'true'}); 
+				el.emit('ar-ready'); }); 
+				alert('marker detected');
+				el.setAttribute('sound',src: url(images/sonido.mp3));
+			} 
+	});
+		*/
+</script>
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
+
   <a-scene embedded arjs="sourceType: webcam;">
-    <a-marker preset="kanji"> 
-    <!--	<a-marker type="pattern" patternUrl="images/pattern-marker.patt"> -->
-    	 <!-- <a-entity  scale="0.005 0.005 0.005" gltf-model-next="src: url(images/buster_drone/scene.gltf);" ></a-entity>   -->
-        <!-- <a-video src="images/video.mp4" position="0 0 0"></a-video> -->
-        <!-- <a-entity  scale="0.3 0.3 0.3" gltf-model-next="src: url(images/glTF/Duck.gltf);" ></a-entity>   
-        <a-entity scale="0.04 0.04 0.04" animation-mixer="clip: *" sound="src: url(images/sonido.mp3); autoplay: true; loop: true" gltf-model-next="src: url(images/walk_rigged_v003/scene.gltf);" ></a-entity>  -->
-        <!-- <a-entity scale="0.04 0.04 0.04" animation-mixer="clip: *" sound="src: url(images/sonido.mp3); autoplay: true; loop: true" gltf-model-next="src: url(images/walk_rigged_v003/scene.gltf);" ></a-entity> -->
-         <a-entity scale="0.3 0.3 0.3" animation-mixer="clip: *" autoplay: true; loop: true" gltf-model-next="src: url(images/small_glytchbug/scene.gltf);" ></a-entity>
-       <!--  <a-entity scale="0.03 0.03 0.03"
-            obj-model="obj: url(images/obj/Robot_modelBONES.obj); 
-            mtl: url(images/obj/Robot_modelBONES.mtl)">
-		</a-entity> -->
+  
+  
+    <!--<a-marker preset="kanji"> -->
+     <a-marker id="robot" preset="custom" type="pattern" url="images/robot-marker.patt">  
+	 
+	 
+    	
+         <!-- <a-video src="images/video.mp4" position="0 0 0"></a-video> -->
+               
+         <a-entity scale="0.08 0.08 0.08" animation-mixer="clip: *; loop:pingpong;" gltf-model-next="src: url(images/robot/scene.gltf);" sound="src: url(images/robot/audio.mp3); on: click; autoplay:true; loop:true;"></a-entity>
+        
+              
+    </a-marker>    
+    
+    <!---------------------------modelo 3d obrera------------->
+    <a-marker id="obrera" preset="custom" type="pattern" url="images/obrera-marker.patt">  
+    	<a-entity  scale="0.005 0.005 0.005" gltf-model-next="src: url(images/obrera/Duck.gltf);" ></a-entity>
     </a-marker>
     
     <a-entity camera></a-entity>
-
   </a-scene>
 
 <script type="text/javascript" src="cordova.js"></script>
