@@ -79,6 +79,4 @@
     <plugin name="cordova-plugin-vibration" spec="^2.1.5" />
     <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.8" />
     <engine name="browser" spec="~5.0.1" />
-    <plugin name="cordova-plugin-file" spec="^5.0.0" />
-    <plugin name="cordova-plugin-file-transfer" spec="^1.7.0" />
 </widget>
