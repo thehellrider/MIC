@@ -16,25 +16,27 @@
 <script src="js/aframe-extras.loaders.min.js"></script>
 <script src="js/aframe-ar.js"></script>
 <style type="text/css">
-	#arjsDebugUIContainer{display:none !important;}
+	#arjsDebugUIContainer,.a-enter-vr{display:none !important;}
 </style>
 <script>
-	/*	AFRAME.registerComponent('play-on-scan', { 
-		init: function () { 
-			var el = this.el; 
-			el.sceneEl.addEventListener('markerFound', function () {  
-				el.setAttribute('animation-mixer', {clip: '*', loop: 'true'}); 
-				el.emit('ar-ready'); }); 
-				alert('marker detected');
-				el.setAttribute('sound',src: url(images/sonido.mp3));
-			} 
-	});
-		*/
+function show_help() {
+    var x = document.getElementById("dialog");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+} 
 </script>
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
-
+	<div id="help" style="position:absolute; bottom:0; left:0; width:100%;z-index:999;">
+	<button style="background:#3AC1BB; color:#fff; padding:8px;" onclick="show_help()">MOSTRAR/OCULTAR AYUDA</button>
+	<div id="dialog">
+		<img style="width:100%; max-width:604px;" src="img/marker.jpg" alt="Apunta la camara al marcador" />
+	</div>
+	</div>
   <a-scene embedded arjs="sourceType: webcam;">
   
   

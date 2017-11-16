@@ -61,26 +61,7 @@
     </style>
     
    <script type="text/javascript" src="js/checkConnection.js"></script>
-   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script>
-  $(function() {
-    $( "#dialog" ).dialog({
-  dialogClass: "no-close",
-  width: 640,
-  title: "Instrucciones",
-  buttons: [
-    {
-      text: "Entendido",
-      click: function() {
-        $( this ).dialog( "close" );
-      }
-    }
-  ]
-});
-  });
-  </script>
+  
   </head>
   
   <body onload="onLoad()" style="height:100%"> 
@@ -107,9 +88,7 @@
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
           
-          <div id="dialog" title="Basic dialog">
-    			<img src="img/marker.jpg" alt="Apunta la camara al marcador" />
-		  </div>
+        
       		        	
             <iframe id="wrapper" src="ar_scanner.html" style="position: absolute; height: 100%; width:100%; border: none;" frameborder="0"></iframe> 
         	       
