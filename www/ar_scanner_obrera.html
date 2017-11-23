@@ -25,6 +25,7 @@ function show_help() {
 	else { x.style.display = "none"; }
 } 
 </script>
+<script src="js/howler.js"></script>
 
 </head>
 
@@ -36,20 +37,16 @@ function show_help() {
             <img style="width:100%; max-width:604px;" src="img/marker.jpg" alt="Apunta la camara al marcador" />
         </div>
 	</div>
-    
+	<!--
+	<div id="boton_play" onclick="play()" style="position:absolute; bottom:10px; right:10px; z-index:1000;"><img src="img/soundbtn.png" /></div>
+	<div id="boton_stop" onclick="stop()" style="position:absolute; bottom:10px; right:10px; z-index:1000; display:none;"><img src="img/stopbtn.png" /></div>
+    -->
   <a-scene embedded arjs="sourceType: webcam;">
   	  	  
     <!--<a-marker preset="kanji"> -->
-     <a-marker id="robot" preset="custom" type="pattern" url="images/robot-marker.patt">
-         		   
-		<a-entity scale="0.5 0.5 0.5"  animation-mixer="clip: *; loop:pingpong;" gltf-model-next="src: url(images/robot/robot.gltf);" sound="src: url(images/robot_mic/audio.mp3); on: click; autoplay:false; loop:true;"></a-entity>  
-		<a-curvedimage src="images/banner.png" theta-start="295" theta-length="125" scale="0.6 0.6 0.6"></a-curvedimage> 
-		
-	</a-marker>    
-   
-    <!---------------------------modelo 3d obrera------------->
+     
     <a-marker id="obrera" preset="custom" type="pattern" url="images/obrera-marker.patt">  
-    	<a-entity scale="0.01 0.01 0.01" animation-mixer="clip: *; loop:pingpong;" gltf-model-next="src: url(images/obrera/obrera.gltf);" sound="src: url(images/obrera/audio.mp3); on: click; autoplay:false; loop:true;"></a-entity>
+    	<a-entity scale="0.01 0.01 0.01" animation-mixer="clip: *; loop:pingpong;" gltf-model-next="src: url(images/obrera/obrera.gltf);" sound="src: url(images/obrera/audio.mp3); autoplay:true; loop:true;" ></a-entity>
 		
     </a-marker>
     
