@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Documento sin título</title>
+ <!--
+<script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+-->
+<script src="js/aframe.min.js"></script>
+<!-- include ar.js for A-Frame 
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/src/loaders/animation-mixer.js"></script> 
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+-->
+<script src="js/aframe-extras.loaders.min.js"></script>
+<script src="js/aframe-ar-fixed.js"></script>
+<style type="text/css">
+	#arjsDebugUIContainer,.a-enter-vr{display:none !important;}
+</style>
+<script>
+function show_help() {
+    var x = document.getElementById("dialog");
+    if (x.style.display === "none") {x.style.display = "block"; } 
+	else { x.style.display = "none"; }
+} 
+</script>
+<script>
+		function getParameterByName(name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+</script>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+	
+    <div id="help" style="position:absolute; bottom:0; left:0; width:100%;z-index:999;">
+        <button style="background:#3AC1BB; color:#fff; padding:8px; border:none;" onclick="show_help()">MOSTRAR/OCULTAR AYUDA</button>
+        <div id="dialog">
+            <img style="width:100%; max-width:604px;" src="img/marker.jpg" alt="Apunta la camara al marcador" />
+        </div>
+	</div>
+    <div id="close" style="position:absolute; bottom:10px; right:10px; z-index:1000;"><a target="_parent" href="ar.html"><img src="img/close.png" /></a></div>
+    
+  <a-scene embedded arjs="sourceType: webcam;">
+	 <script>         
+ 		var scene = getParameterByName('scene');
+		if (scene=="robot"){
+			document.write("<a-marker id='robot' preset='custom' type='pattern' url='images/robot-marker.patt'><a-entity scale='0.5 0.5 0.5'  animation-mixer='clip: *; loop:pingpong;' gltf-model-next='src: url(images/robot/robot.gltf);' sound='src: url(images/robot/audio.mp3); autoplay:true; loop:true;'></a-entity></a-marker>");
+		}
+		else if(scene=="obrera"){
+			document.write("<a-marker id='obrera' preset='custom' type='pattern' url='images/obrera-marker.patt'><a-entity scale='0.01 0.01 0.01' animation-mixer='clip: *; loop:pingpong;' gltf-model-next='src: url(images/obrera/obrera.gltf);' sound='src: url(images/obrera/audio.mp3); autoplay:true; loop:true;'></a-entity></a-marker>");
+		}					
+	</script>
+    
+    <a-entity camera></a-entity>
+  </a-scene>
+
+<script type="text/javascript" src="cordova.js"></script>
+</body>
+</html>
