@@ -19,6 +19,9 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
+	<edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+		<string>La app necesita acceso a la camara</string>
+	</edit-config>
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
@@ -78,5 +81,5 @@
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-vibration" spec="^2.1.5" />
     <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.8" />
-    <engine name="browser" spec="~5.0.1" />
+    <engine name="browser" spec="~5.0.1" />	
 </widget>
