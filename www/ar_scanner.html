@@ -44,7 +44,9 @@ function stopStreamedVideo() {
   });
 
   videoElem.srcObject = null;
-  document.location.replace('index.html');
+  alert("Espero que te hayas divertido...espera un momento te estamos redirigiendo");
+  //document.location.replace('index.html');
+  window.setTimeout(function(){parent.document.location.replace('ar.html'); }, 3000);
 }
 </script>
 </head>
