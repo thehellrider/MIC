@@ -24,35 +24,51 @@ function show_help() {
     if (x.style.display === "none") {x.style.display = "block"; } 
 	else { x.style.display = "none"; }
 } 
-
+/*
 function play(){
 	var audio = new Audio('images/robot/audio.mp3');
 	audio.play();
 	document.getElementById("audio").style.display="none";
-	document.getElementById("close").style.display="none";
-	audio.onended = function(){document.getElementById("close").style.display="inline"; document.getElementById("audio").style.display="inline";}
-	
+	audio.onended = function(){ document.getElementById("audio").style.display="inline";}	
+}
+*/
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
 function stopStreamedVideo() {
+	//clear video
 	videoElem=document.getElementsByTagName('video')[0];	
-  let stream = videoElem.srcObject;
-  let tracks = stream.getTracks();
-
-  tracks.forEach(function(track) {
-    track.stop();
-  });
-
-  videoElem.srcObject = null;
-  alert("Espero que te hayas divertido...espera un momento te estamos redirigiendo");
-  //document.location.replace('index.html');
-  window.setTimeout(function(){parent.document.location.replace('ar.html'); }, 3000);
+  	let stream = videoElem.srcObject;
+  	let tracks = stream.getTracks();
+  	tracks.forEach(function(track) {track.stop(); });
+  	videoElem.srcObject = null;
+  	//clear audio
+	sonido=document.getElementsByTagName('audio')[0];
+	sonido.pause();	
+	//redirect
+	alert("Espero que te hayas divertido...espera un momento te estamos redirigiendo");
+  	window.setTimeout(function(){parent.document.location.replace('ar.html'); }, 3000);
 }
 </script>
 </head>
 
 <body style="margin : 0px; overflow: hidden;" >
-	 <!-- <div id="audio" style="position:absolute; top:10px; right:10px; z-index:998;"><img onclick="play()" src="images/sonidobtn.png" alt="sonido" /></div> -->
+	   <div id="audio" style="position:absolute; top:10px; right:10px; z-index:998;">
+       		<!-- <img onclick="play()" src="images/sonidobtn.png" alt="sonido" /> -->
+            <script>
+				var scene = getParameterByName('scene');
+				document.write("<audio src='images/"+scene+"/audio.mp3' controls loop ></audio>");
+			</script>            
+       </div> 
+    
+  
     <div id="help" style="position:absolute; bottom:0; left:0; width:100%;z-index:999;">
         <button style="background:#3AC1BB; color:#fff; padding:8px; border:none;" onclick="show_help()">MOSTRAR/OCULTAR AYUDA</button>
         <div id="dialog">
