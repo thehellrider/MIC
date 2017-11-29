@@ -67,12 +67,24 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+	    <plugin name="cordova-plugin-camera" spec="^2.4.1">
+		<variable name="CAMERA_USAGE_DESCRIPTION" value="Leer codigos QR." />
+		<variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Acceder a la fototeca." />
+	    </plugin>
+	    <plugin name="cordova-plugin-media-capture" spec="^1.4.3" >
+		<variable name="CAMERA_USAGE_DESCRIPTION" value="Leer codigos QR." />
+		<variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Acceder a la fototeca." />
+	    </plugin>
     </platform>
     <plugin name="cordova-plugin-battery-status" />
     <plugin name="cordova-plugin-camera" spec="^2.4.1">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="Debes permitir que la aplicacion pueda usar la camara para que funcione." />
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Leer codigos QR." />
+    	<variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Acceder a la fototeca." />
     </plugin>
-    <plugin name="cordova-plugin-media-capture" spec="^1.4.3" />
+    <plugin name="cordova-plugin-media-capture" spec="^1.4.3" >
+	<variable name="CAMERA_USAGE_DESCRIPTION" value="Leer codigos QR." />
+	<variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Acceder a la fototeca." />
+    </plugin>
     <plugin name="cordova-plugin-console" spec="^1.1.0" />
     <plugin name="cordova-plugin-contacts" spec="^2.3.1" />
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
