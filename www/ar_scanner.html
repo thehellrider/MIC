@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <title>Documento sin título</title>
  <!--
 <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
@@ -16,7 +17,14 @@
 <script src="js/aframe-extras.loaders.min.js"></script>
 <script src="js/aframe-ar.js"></script>
 <style type="text/css">
-	#arjsDebugUIContainer,.a-enter-vr{display:none !important;}
+	#arjsDebugUIContainer,.a-enter-vr{
+		display:none !important;
+	}
+	@media screen and (max-width: 500px)  {  
+  		#help{
+			display:none !important;
+		} 
+	}
 </style>
 <script>
 function show_help() {
