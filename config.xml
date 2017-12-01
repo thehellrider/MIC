@@ -88,10 +88,7 @@
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app needs read/write-access photo library access" />
     </plugin>
     <engine name="browser" spec="~5.0.1" />
+    <plugin name="cordova-plugin-file" spec="^4.0.0" />
     <engine name="ios" spec="~4.5.4" />
-    <plugin name="cordova-plugin-file" spec="^5.0.0" />
-    <plugin name="cordova-plugin-media-capture" spec="^2.0.0">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="La app necesita acceso a la camara para leer codigos QR" />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="La app necesita acceder a la biblioteca de medios" />
-    </plugin>
+    <plugin name="cordova-plugin-media-capture" spec="^1.4.3" />
 </widget>
