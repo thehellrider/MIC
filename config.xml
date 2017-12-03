@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.area.mic" version="1.2.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.area.mic" version="1.2.7" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>MIC</name>
     <description>App Museo Interactivo de Ciencias</description>
     <author email="info@planagencia.com" href="http://www.planagencia.com">Plan Agencia</author>
@@ -82,11 +82,20 @@
     <plugin name="cordova-plugin-camera" spec="^3.0.0" >
         <variable name="CAMERA_USAGE_DESCRIPTION" value="La app necesita acceso a la camara para leer codigos QR" />
         <variable name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" value="This app needs write-access to photo library" />
-    </plugin>    
+		<param name="CAMERA_USAGE_DESCRIPTION" value="La app necesita acceso a la camara para leer codigos QR" />
+   		<param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="La app necesita acceso a la biblioteca" />
+    </plugin>   
+	<edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+		<string>La app necesita acceso a la camara para leer codigos QR</string>
+	</edit-config>
+	
+	<edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+		<string>La app necesita acceso a la biblioteca</string>
+	</edit-config> 
     <plugin name="cordova-plugin-ios-camera-permissions" spec="^1.2.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="La app necesita acceso a la camara para leer codigos QR" />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="This app needs microphone access" />
-        <variable name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" value="This app needs write-access to photo library" />
+        <variable name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" value="La app necesita acceso a la biblioteca" />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app needs read/write-access photo library access" />
     </plugin>
     <engine name="browser" spec="~5.0.1" />
@@ -96,6 +105,6 @@
     <plugin name="cordova-plugin-media" spec="^3.0.1">
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App need acces to mic" />
         <variable name="CAMERA_USAGE_DESCRIPTION" value="La app necesita acceso a la camara para leer codigos QR" />
-        <variable name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" value="This app needs write-access to photo library" />
+        <variable name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" value="La app necesita acceso a la biblioteca" />
     </plugin>
 </widget>
