@@ -91,7 +91,10 @@
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-vibration" spec="^2.1.5" />
     <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.8" />
-    <plugin name="cordova-plugin-camera" spec="^3.0.0" />        
+    <plugin name="cordova-plugin-camera" spec="^3.0.0" > 
+	<variable name="CAMERA_USAGE_DESCRIPTION" value="Allow the app to use your camera" />
+      <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
+    </plugin>
     <plugin name="cordova-plugin-ios-camera-permissions" spec="^1.2.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="La app necesita acceso a la camara para leer codigos QR" />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="This app needs microphone access" />
@@ -101,6 +104,8 @@
     <engine name="browser" spec="~5.0.1" />
     <plugin name="cordova-plugin-file" spec="^4.0.0" />
     <engine name="ios" spec="~4.5.4" />
-    <plugin name="cordova-plugin-media-capture" spec="^1.4.3" />
+    <plugin name="cordova-plugin-media-capture" spec="^1.4.3" >
+	    <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
+    </plugin>
     <plugin name="cordova-plugin-media" spec="^3.0.1" /> 
 </widget>
