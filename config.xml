@@ -71,6 +71,9 @@
 			<string>La app necesita acceso a la biblioteca</string>
 		</edit-config> 
     </platform>	
+	<config-file platform="ios" parent="NSPhotoLibraryUsageDescription" mode="replace">  
+	      <string>La app necesita acceso a la biblioteca</string> 
+	</config-file>
     <plugin name="cordova-plugin-battery-status" />
     <plugin name="cordova-plugin-console" spec="^1.1.0" />
     <plugin name="cordova-plugin-contacts" spec="^2.3.1" />
