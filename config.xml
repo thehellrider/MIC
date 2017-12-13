@@ -4,6 +4,7 @@
     <description>App Museo Interactivo de Ciencias</description>
     <author email="info@planagencia.com" href="http://www.planagencia.com">Plan Agencia</author>
     <content src="index.html" />
+	<preference name="phonegap-version" value="cli-7.0.1" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
