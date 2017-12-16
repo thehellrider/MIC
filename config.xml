@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.area.mic" version="1.5.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.area.mic" version="1.5.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>MIC</name>
     <description>App Museo Interactivo de Ciencias</description>
     <author email="info@planagencia.com" href="http://www.planagencia.com">Plan Agencia</author>
     <content src="index.html" />
-	<preference name="phonegap-version" value="cli-7.0.1" />
+    <preference name="phonegap-version" value="cli-7.0.1" />
+	<allow-navigation href="*" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
