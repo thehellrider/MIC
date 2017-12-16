@@ -28,7 +28,7 @@
     <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />
     <icon gap:platform="blackberry" src="www/res/icon/blackberry/icon-80.png" />
     <icon gap:platform="blackberry" gap:state="hover" src="www/res/icon/blackberry/icon-80.png" />	
-        <icon height="1024" width="1024" src="icon-1024.png" />
+        <icon height="1024" gap:platform="ios" width="1024" src="icon-1024.png" />
 	<icon height="57" gap:platform="ios" src="icon.png" width="57" />
         <icon height="114" gap:platform="ios" src="icon@2x.png" width="114" />
         <icon height="40" gap:platform="ios" src="icon-40.png" width="40" />
